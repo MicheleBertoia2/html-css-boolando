@@ -10,16 +10,32 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  margin-top: 80px;
+}
+
+main img {
+  position: absolute;
+  width: 100% ;
+  height: 100%;
+  object-fit: cover;
+}
+
 .container {
   margin: 0 auto;
   width: 90%;
   max-width: 1200px;
 }
 
-a {
-  color: white;
-  text-decoration: none;
+.flex-container {
+  display: flex;
 }
+
 
 /* UTILITY */
 
@@ -33,7 +49,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 80px;
+  width: 100%;
   background-color: rgb(247, 92, 36);
   color: white;
 }
@@ -67,4 +88,40 @@ header .logo img {
 
 header .profile {
   text-align: right;
+}
+
+/* MAIN */
+
+main .row {
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+main .product-box {
+  width: 350px;
+  min-width: 200px;
+  height: 800px;
+  
+  /* DEBUG */
+  background-color: blue;
+  border: 1px solid black;
+}
+
+.product-box .image {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  cursor: pointer;
+
+  /* DEBUG */
+  background-color: brown;
+}
+
+.product-box .image img:last-child {
+  display: none;
+}
+
+.product-box .image:hover img:last-child {
+  display: block;
 }
